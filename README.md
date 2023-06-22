@@ -1,70 +1,137 @@
-# Getting Started with Create React App
+# Basic React Modal Component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The `BasicModal` component is a very simple, reusable, modal component built with React.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Installation](#installation)
+- [Usage](#usage)
+- [Examples](#examples)
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To install this package, you can use [npm](https://npmjs.org/):
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    $ npm install basic-react-modal-component
 
-### `npm test`
+## Usage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To use the `BasicModal` component in your React application, follow these steps:
 
-### `npm run build`
+1. Import the `BasicModal` component into your file:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```jsx
+import { BasicModal } from "basic-react-modal-component";
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Use the BasicModal component in your code, passing the necessary props:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```jsx
+function App() {
+  // State for controlling the modal visibility
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-### `npm run eject`
+  // Function to open the modal
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  // Function to close the modal
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  return (
+    <div className="App">
+      {/* Other content */}
+      <BasicModal
+        isOpen={isModalOpen}
+        closeModal={closeModal}
+        textContent="The text you want to display here"
+      />
+    </div>
+  );
+}
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+In the example above, the `isOpen` prop controls the visibility of the modal, the `closeModal` prop is a function to close the modal, and the `textContent` prop represents the content to be displayed within the modal.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. You can customize the modal behavior and content via the `BasicModal.jsx` file, and customize the styles via the `BasicModal.css` file.
 
-## Learn More
+## Examples
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Here is a very basic implementation of the modal, where we open it with a button:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```jsx
+function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-### Code Splitting
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
-### Analyzing the Bundle Size
+  return (
+    <div className="App">
+      <button className="open-btn" onClick={openModal}>
+        Open the modal
+      </button>
+      <BasicModal
+        isOpen={isModalOpen}
+        closeModal={closeModal}
+        textContent="Employee Created!"
+      />
+    </div>
+  );
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+export default App;
+```
 
-### Making a Progressive Web App
+Here is another example where the modal is being opened by a form's submit button:"
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```jsx
+function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-### Advanced Configuration
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
-### Deployment
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    openModal();
+  };
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+  return (
+    <div className="App">
+      <form>
+        <label htmlFor="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" value="Gwen"></input>
+        <label htmlFor="lastName">Last Name:</label>
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          value="Herissant"
+        ></input>
+        <input type="submit" value="Submit" onClick={handleSubmit} />
+      </form>
+      <BasicModal
+        isOpen={isModalOpen}
+        closeModal={closeModal}
+        textContent="Employee Created!"
+      />
+    </div>
+  );
+}
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+export default App;
+```
