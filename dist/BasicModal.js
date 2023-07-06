@@ -10,6 +10,14 @@ var _reactFontawesome = require("@fortawesome/react-fontawesome");
 var _freeSolidSvgIcons = require("@fortawesome/free-solid-svg-icons");
 var _propTypes = _interopRequireDefault(require("prop-types"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+/**
+ * Generates modal component
+ * @param {prop} isOpen detects if modal is open or not
+ * @param {prop} closeModal triggers closeModal() function if true
+ * @param {string} textContent displayed in modal
+ * @returns 
+ */
+
 function BasicModal(_ref) {
   var isOpen = _ref.isOpen,
     closeModal = _ref.closeModal,
@@ -31,7 +39,7 @@ function BasicModal(_ref) {
   }, textContent))));
 }
 BasicModal.propTypes = {
-  isOpen: _propTypes.default.func,
+  isOpen: _propTypes.default.bool,
   closeModal: _propTypes.default.func,
   textContent: _propTypes.default.string.isRequired
 };
