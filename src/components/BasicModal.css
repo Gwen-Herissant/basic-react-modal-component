@@ -9,7 +9,7 @@
 
 .modal-content {
   position: relative;
-  width: 400px;
+  max-width: 400px;
   height: 50px;
   top: 40%;
   text-align: center;
@@ -33,4 +33,10 @@
   border: none;
   padding: 0.5rem;
   cursor: pointer;
+}
+
+@media screen and (max-width: 780px) {
+  .modal-content {
+    margin: 20px;
+  }
 }
