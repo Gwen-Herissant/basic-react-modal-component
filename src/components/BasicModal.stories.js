@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import BasicModal from './BasicModal';
 
+/**
+ * Generates information for storybook
+ */
+
 export default {
   title: 'BasicModal',
   component: BasicModal,

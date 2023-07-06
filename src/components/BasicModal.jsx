@@ -4,6 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 
+/**
+ * Generates modal component
+ * @param {prop} isOpen detects if modal is open or not
+ * @param {prop} closeModal triggers closeModal() function if true
+ * @param {string} textContent displayed in modal
+ * @returns 
+ */
 
 export default function BasicModal({isOpen, closeModal, textContent = ''}){
   return(
