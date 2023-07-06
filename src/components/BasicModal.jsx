@@ -29,7 +29,7 @@ export default function BasicModal({isOpen, closeModal, textContent = ''}){
 
 
 BasicModal.propTypes = {
-  isOpen: PropTypes.func,
+  isOpen: PropTypes.bool,
   closeModal: PropTypes.func,
   textContent: PropTypes.string.isRequired,
 };
