@@ -58,6 +58,8 @@ In the example above, the `isOpen` prop controls the visibility of the modal, th
 
 3. You can customize the modal behavior and content via the `BasicModal.jsx` file, and customize the styles via the `BasicModal.css` file.
 
+(I would recommand using Visual Studio Code for developping with this package.)
+
 ## Examples
 
 Here is a very basic implementation of the modal, where we open it with a button:
