@@ -66,12 +66,15 @@ Here is a very basic implementation of the modal, where we open it with a button
 
 ```jsx
 function App() {
+  // State for controlling the modal visibility
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Function to open the modal
   const openModal = () => {
     setIsModalOpen(true);
   };
 
+  // Function to close the modal
   const closeModal = () => {
     setIsModalOpen(false);
   };
@@ -97,16 +100,20 @@ Here is another example where the modal is being opened by a form's submit butto
 
 ```jsx
 function App() {
+  // State for controlling the modal visibility
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Function to open the modal
   const openModal = () => {
     setIsModalOpen(true);
   };
 
+  // Function to close the modal
   const closeModal = () => {
     setIsModalOpen(false);
   };
 
+  //Function being triggered on form submit
   const handleSubmit = (event) => {
     event.preventDefault();
     openModal();
