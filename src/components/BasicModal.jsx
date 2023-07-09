@@ -6,8 +6,8 @@ import PropTypes from 'prop-types';
 
 /**
  * Generates modal component
- * @param {prop} isOpen detects if modal is open or not
- * @param {prop} closeModal triggers closeModal() function if true
+ * @param {boolean} isOpen detects if modal is open or not
+ * @param {boolean} closeModal triggers closeModal() function if true
  * @param {string} textContent displayed in modal
  * @returns 
  */
